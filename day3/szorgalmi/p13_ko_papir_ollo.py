@@ -8,8 +8,8 @@ Két játékos egymás után választhat, a szokásos szabályok mentén.
 '''
 
 list = ['Kő', 'Papír', 'Olló']
-Player1 = "Béla"
-Player2 = "Nóri"
+Player1 = input ('Egyik játékos neve: ') or "Viktor"
+Player2 = input ('Másik játékos neve: ') or "Ferenc"
 
 while True:
     print()
@@ -19,10 +19,10 @@ while True:
         break
 
     roll1 = random.choice(list)
-    print(Player1, roll1)
+    print(f'{Player1}: {roll1}')
 
     roll2 = random.choice(list)
-    print(Player2, roll2)
+    print(f'{Player2}: {roll2}')
 
     if roll1 == roll2:
         print('Egál')
