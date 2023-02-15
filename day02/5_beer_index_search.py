@@ -30,6 +30,7 @@ while not vege:
         time.sleep(.3)
     else:
         vege = True
+
 if sorindexek:
     print()
     print('*' * len(sentence))
