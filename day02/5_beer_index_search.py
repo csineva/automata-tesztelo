@@ -12,7 +12,7 @@ pointer = 0
 print("Sörkeresés indul az alábbi mintában:")
 for i in sentence:
     print(i, end='')
-    time.sleep(.05)
+    time.sleep(.02)
 
 print()
 print('-' * len(sentence))
@@ -22,10 +22,10 @@ while not vege:
     pointer = sentence.find('sör', pointer)
     if pointer > -1:
         sorindexek.append(pointer)
-        print('Hoppá! Nicsak, itt is egy sör:', pointer)
+        print(f'Hoppá! Nicsak, itt is egy sör: [{pointer}]')
         pointer += 1
 
-        time.sleep(.5)
+        time.sleep(.3)
     else:
         vege = True
 print()
