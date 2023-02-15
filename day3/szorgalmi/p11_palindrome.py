@@ -4,3 +4,12 @@ I. Készíts egy szkriptet, ami kijelzi, hogy a felhasználótól bekért szó p
 II. Készíts egy szkriptet, ami kijelzi, hogy a felhasználótól bekért mondat palindróma-e?
 Palindróma az, ami visszafele olvasva is ugyanazt adja, mint az eredeti. Pl. szó esetén: kék, mondat esetén: Indul a görög aludni.
 '''
+
+userstr = input('Kérlek adj meg egy szót vagy mondatot!')
+
+kifilezett = userstr.replace(' ', '').replace('.', '').lower()
+
+if kifilezett == kifilezett[::-1]:
+    print('A string palindrom!')
+else:
+    print('Nem palindrom :(')
