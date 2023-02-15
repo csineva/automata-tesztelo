@@ -4,7 +4,9 @@ A megadott stringben keressük meg az összes 'sör' előfordulást és tárolju
 """
 import time
 
+# sentence = 'alma a fa alatt nyári piros alma'
 sentence = 'Egy sör nem sör. 2 sör fél sör. 4 sör 1 sör. 1 sör meg nem sör...'
+
 sorindexek = []
 vege = False
 pointer = 0
@@ -28,7 +30,13 @@ while not vege:
         time.sleep(.3)
     else:
         vege = True
-print()
-print('*' * len(sentence))
-print('Sörökkévalóság!', sorindexek)
-print('*' * len(sentence))
+if sorindexek:
+    print()
+    print('*' * len(sentence))
+    print('Sörökkévalóság!', sorindexek)
+    print('*' * len(sentence))
+else:
+    print()
+    print('*' * len(sentence))
+    print('Nincs sör! Nincs sööör! :(((')
+    print('*' * len(sentence))
