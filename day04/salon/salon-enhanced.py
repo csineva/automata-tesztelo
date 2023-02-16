@@ -17,13 +17,14 @@ while True:
     if selected_menu_item == '1':
         banner('MENÜ - Dolgozók kezelése')
         selected_menu_item = select_from_menu_employee()
+        print()
 
         if selected_menu_item == '1':
             list_employee()
         elif selected_menu_item == '2':
-            pass
+            add_employee()
         elif selected_menu_item == '3':
-            pass
+            remove_empoyee()
         elif selected_menu_item == '4':
             pass
         elif selected_menu_item == '5':
@@ -36,6 +37,7 @@ while True:
     elif selected_menu_item == '2':
         banner('MENÜ - Autók kezelése')
         selected_menu_item = select_from_menu_car()
+        print()
 
         if selected_menu_item == '1':
             list_cars()

@@ -12,6 +12,26 @@ CARS = [
 
 # FUNCTIONS --------------------------------------------------------------------------------------------------------
 
+def remove_empoyee():
+    list_employee()
+    selected_employee = int(input(f'Melyik rekordot szeretné törölni? (1-{len(EMPLOYEES)})'))
+    print(selected_employee)
+    are_you_sure = (input(f'Biztosan ki szeretnéd törölni szegény '
+                          f'{EMPLOYEES[selected_employee - 1][0]}-t?(igen/nem)'))
+    if are_you_sure.lower() == 'igen':
+        are_you_sure2 = (input(f'Lehet hogy van családja, gyermekei... '
+                          f'Töröljük ki tényleg? :(( (igen/nem)'))
+        if are_you_sure2.lower() == 'igen':
+            removed_employee = EMPLOYEES.pop(selected_employee - 1)
+            print(f'{removed_employee} eltávolítva.')
+
+def add_employee():
+    employee_data = []
+    employee_data.append(input('Kérjük adja meg a dolgozó nevét!'))
+    employee_data.append(input('Kérjük adja meg a dolgozó életkorát!'))
+    print(employee_data)
+    EMPLOYEES.append(employee_data)
+    print('A dolgozót rendszerünkben sikeresen rögzítettük!')
 
 def banner(message, border_char='-'):
     print(border_char * (len(message)+4))
@@ -38,6 +58,7 @@ def select_from_menu_employee():
 
     return input('A választott menüpont (1-5): ')
 
+
 def select_from_menu_car():
     print('''
 1. Autók listázása
@@ -50,6 +71,7 @@ def select_from_menu_car():
 
 def list_employee():
     counter = 1
+    print(f'A dolgozók listája ({len(EMPLOYEES)} fő):')
     for employee in EMPLOYEES:
         print(f'{counter}. {employee[0]}, {employee[1]} years old.')
         counter += 1
