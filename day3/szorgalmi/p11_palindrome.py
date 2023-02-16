@@ -9,7 +9,7 @@ Palindróma az, ami visszafele olvasva is ugyanazt adja, mint az eredeti. Pl. sz
 
 userstr = input('Kérlek adj meg egy szót vagy mondatot!')
 
-kifilezett = anyascii(userstr.replace(' ', '').replace('.', '').lower())
+kifilezett = anyascii(userstr.replace(' ', '').replace('.', '').replace(',', '').lower())
 print(kifilezett)
 
 if kifilezett == kifilezett[::-1]:
