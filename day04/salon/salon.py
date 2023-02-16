@@ -7,10 +7,33 @@ EMPLOYEES = [
 
 CARS = [
     ['Ford Focus', 2007, True], # Név, gyártási év, benzines-e
-    ['Kia Rio', 2014, False]
+    ['Kia Rio', 2014, False],
+    ['Skoda Octavia', 2011, False]
+    ['Pözsi 206', 2001, True]
 ]
 
 # FUNCTIONS --------------------------------------------------------------------------------------------------------
+
+
+def remove_car():
+    list_cars()
+    selected_car = int(input(f'Melyik rekordot szeretné törölni? (1-{len(CARS)})'))
+    print(selected_car)
+    removed_car = CARS.pop(selected_car - 1)
+    print(f'Szegény {removed_car[0]} eltávolítva.')
+
+
+def add_car():
+    car_data = [input('Kérjük adja meg az autó típusát!'),
+                input('Kérjük adja meg az autó gyártási évét!')]
+    fuel_type = (input('Kérjük adja meg az üzemanyag típusát (benzin/diesel)!'))
+    if fuel_type.lower() == 'benzin':
+        car_data.append(True)
+    else:
+        car_data.append(False)
+    CARS.append(car_data)
+    print('Az autót rendszerünkben sikeresen rögzítettük!')
+
 
 def remove_empoyee():
     list_employee()
@@ -23,15 +46,15 @@ def remove_empoyee():
                           f'Töröljük ki tényleg? :(( (igen/nem)'))
         if are_you_sure2.lower() == 'igen':
             removed_employee = EMPLOYEES.pop(selected_employee - 1)
-            print(f'{removed_employee} eltávolítva.')
+            print(f'Szegény {removed_employee[0]} eltávolítva.')
+
 
 def add_employee():
-    employee_data = []
-    employee_data.append(input('Kérjük adja meg a dolgozó nevét!'))
-    employee_data.append(input('Kérjük adja meg a dolgozó életkorát!'))
-    print(employee_data)
+    employee_data = [input('Kérjük adja meg a dolgozó nevét!'),
+                     input('Kérjük adja meg a dolgozó életkorát!')]
     EMPLOYEES.append(employee_data)
     print('A dolgozót rendszerünkben sikeresen rögzítettük!')
+
 
 def banner(message, border_char='-'):
     print(border_char * (len(message)+4))

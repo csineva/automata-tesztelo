@@ -26,7 +26,7 @@ while True:
         elif selected_menu_item == '3':
             remove_empoyee()
         elif selected_menu_item == '4':
-            pass
+            continue
         elif selected_menu_item == '5':
             print()
             print('A viszontlátásra!')
@@ -42,11 +42,11 @@ while True:
         if selected_menu_item == '1':
             list_cars()
         elif selected_menu_item == '2':
-            pass
+            add_car()
         elif selected_menu_item == '3':
-            pass
+            remove_car()
         elif selected_menu_item == '4':
-            pass
+            continue
         elif selected_menu_item == '5':
             print()
             print('A viszontlátásra!')
