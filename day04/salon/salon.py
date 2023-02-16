@@ -8,7 +8,7 @@ EMPLOYEES = [
 CARS = [
     ['Ford Focus', 2007, True], # Név, gyártási év, benzines-e
     ['Kia Rio', 2014, False],
-    ['Skoda Octavia', 2011, False]
+    ['Skoda Octavia', 2011, False],
     ['Pözsi 206', 2001, True]
 ]
 
