@@ -26,7 +26,6 @@ def add_employee():
 def remove_empoyee():
     list_employee()
     selected_employee = int(input(f'Melyik rekordot szeretné törölni? (1-{len(EMPLOYEES)})'))
-    print(selected_employee)
     are_you_sure = (input(f'Biztosan ki szeretnéd törölni szegény '
                           f'{EMPLOYEES[selected_employee - 1][0]}-t?(igen/nem)'))
     if are_you_sure.lower() == 'igen':
