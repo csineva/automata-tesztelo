@@ -104,6 +104,7 @@ def list_employee():
 
 def list_cars():
     counter = 1
+    print(f'Az autók listája ({len(CARS)} db):')
     for car in CARS:
         print(f'{counter}. {car[0]} ({car[1]},', end='')
         if car[2]:

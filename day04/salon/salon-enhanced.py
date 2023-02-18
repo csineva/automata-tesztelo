@@ -24,7 +24,10 @@ while True:
         elif selected_menu_item == '2':
             add_employee()
         elif selected_menu_item == '3':
-            remove_empoyee()
+            if len(EMPLOYEES) > 0:
+                remove_empoyee()
+            else:
+                print('Sajnos már nincs kit kirúgni.')
         elif selected_menu_item == '4':
             continue
         elif selected_menu_item == '5':
@@ -44,7 +47,10 @@ while True:
         elif selected_menu_item == '2':
             add_car()
         elif selected_menu_item == '3':
-            remove_car()
+            if len(CARS):
+                remove_car()
+            else:
+                print('Az adatbázis már egyetlen autót sem tartalmaz.')
         elif selected_menu_item == '4':
             continue
         elif selected_menu_item == '5':
