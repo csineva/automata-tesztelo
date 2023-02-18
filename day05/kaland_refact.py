@@ -41,7 +41,7 @@ while not exit_game:
     if choice == 1:
         choice = print_and_choose(0, 2, 3, 4)
 
-    if choice == 2:
+    elif choice == 2:
         choice = print_and_choose(1, 5, 6, 7)
 
     elif choice == 3:
