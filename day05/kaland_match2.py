@@ -34,8 +34,7 @@ def print_and_choose(*args):
     for i in args:
         print(data[i])
     print()
-    select = int(input('Mit választasz? Írj be a számot: '))
-    choice == select
+    choice = int(input('Mit választasz? Írj be a számot: '))
 
 
 while not exit_game:
