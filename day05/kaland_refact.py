@@ -29,78 +29,78 @@ exit_game = False
 
 
 def print_and_choose(*args):
+    global choice
     print()
     for i in args:
         print(data[i])
     print()
-    select = int(input('Mit választasz? Írj be a számot: '))
-    return select
+    choice = int(input('Mit választasz? Írj be a számot: '))
 
 
 while not exit_game:
     if choice == 1:
-        choice = print_and_choose(0, 2, 3, 4)
+        print_and_choose(0, 2, 3, 4)
 
     elif choice == 2:
-        choice = print_and_choose(1, 5, 6, 7)
+        print_and_choose(1, 5, 6, 7)
 
     elif choice == 3:
-        choice = print_and_choose(8, 9, 10)
+        print_and_choose(8, 9, 10)
 
     elif choice == 4:
-        choice = print_and_choose(11, 12, 13)
+        print_and_choose(11, 12, 13)
 
     elif choice == 5:
-        choice = print_and_choose(10, 12, 14)
+        print_and_choose(10, 12, 14)
 
     elif choice == 6:
-        choice = print_and_choose(4, 15, 16)
+        print_and_choose(4, 15, 16)
 
     elif choice == 7:
-        choice = print_and_choose(12, 15, 16)
+        print_and_choose(12, 15, 16)
 
     elif choice == 8:
-        choice = print_and_choose(4, 17, 18)
+        print_and_choose(4, 17, 18)
 
     elif choice == 9:
-        choice = print_and_choose(15, 16, 4)
+        print_and_choose(15, 16, 4)
 
     elif choice == 10:
-        choice = print_and_choose(15, 7, 17)
+        print_and_choose(15, 7, 17)
 
     elif choice == 11:
-        choice = print_and_choose(19, 3, 2)
+        print_and_choose(19, 3, 2)
 
     elif choice == 12:
-        choice = print_and_choose(15, 20, 21)
+        print_and_choose(15, 20, 21)
 
     elif choice == 13:
-        choice = print_and_choose(16, 3, 2)
+        print_and_choose(16, 3, 2)
 
     elif choice == 14:
-        choice = print_and_choose(19, 21, 12)
+        print_and_choose(19, 21, 12)
 
     elif choice == 15:
-        choice = print_and_choose(22)
+        print_and_choose(22)
 
     elif choice == 16:
-        choice = print_and_choose(18, 17, 12)
+        print_and_choose(18, 17, 12)
 
     elif choice == 17:
-        choice = print_and_choose(19)
+        print_and_choose(19)
 
     elif choice == 18:
-        choice = print_and_choose(4)
+        print_and_choose(4)
 
     elif choice == 19:
         print("VÉGE")
         exit_game = True
 
     elif choice == 20:
-        choice = print_and_choose(22)
+        print_and_choose(22)
 
     elif choice == 21:
-        choice = print_and_choose(19)
+        print_and_choose(19)
 
     elif choice == 22:
         print('VÉGE')
