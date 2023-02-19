@@ -1,15 +1,8 @@
-PI = 3.14159265359
-print("A pí értéke: {}".format(PI))                   # format() metódus
+c = 1
 
-nev = "Béla"
-eletkor = 21
-print("Hello, %s vagyok, %d éves." % (nev, eletkor))  # %-formatting
 
-elet_ertelme = 42
-print(f"Az élet értelme: {elet_ertelme}")             # f-string
+def changer(n):
+    c=n
 
-def adder(*args):
-    return sum(args)
-
-print(adder(2, 3, 5, 7, 8))
-
+changer(5)
+print(c)
