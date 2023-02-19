@@ -29,59 +29,60 @@ exit_game = False
 
 
 def print_and_choose(*args):
+    global choice
     print()
     for i in args:
         print(data[i])
     print()
     select = int(input('Mit választasz? Írj be a számot: '))
-    return select
+    choice == select
 
 
 while not exit_game:
     match choice:
         case 1:
-            choice = print_and_choose(0, 2, 3, 4)
+            print_and_choose(0, 2, 3, 4)
         case 2:
-            choice = print_and_choose(1, 5, 6, 7)
+            print_and_choose(1, 5, 6, 7)
         case 3:
-            choice = print_and_choose(8, 9, 10)
+            print_and_choose(8, 9, 10)
         case 4:
-            choice = print_and_choose(11, 12, 13)
+            print_and_choose(11, 12, 13)
         case 5:
-            choice = print_and_choose(10, 12, 14)
+            print_and_choose(10, 12, 14)
         case 6:
-            choice = print_and_choose(4, 15, 16)
+            print_and_choose(4, 15, 16)
         case 7:
-            choice = print_and_choose(12, 15, 16)
+            print_and_choose(12, 15, 16)
         case 8:
-            choice = print_and_choose(4, 17, 18)
+            print_and_choose(4, 17, 18)
         case 9:
-            choice = print_and_choose(15, 16, 4)
+            print_and_choose(15, 16, 4)
         case 10:
-            choice = print_and_choose(15, 7, 17)
+            print_and_choose(15, 7, 17)
         case 11:
-            choice = print_and_choose(19, 3, 2)
+            print_and_choose(19, 3, 2)
         case 12:
-            choice = print_and_choose(15, 20, 21)
+            print_and_choose(15, 20, 21)
         case 13:
-            choice = print_and_choose(16, 3, 2)
+            print_and_choose(16, 3, 2)
         case 14:
-            choice = print_and_choose(19, 21, 12)
+            print_and_choose(19, 21, 12)
         case 15:
-            choice = print_and_choose(22)
+            print_and_choose(22)
         case 16:
-            choice = print_and_choose(18, 17, 12)
+            print_and_choose(18, 17, 12)
         case 17:
-            choice = print_and_choose(19)
+            print_and_choose(19)
         case 18:
-            choice = print_and_choose(4)
+            print_and_choose(4)
         case 19:
             print("VÉGE")
             exit_game = True
         case 20:
-            choice = print_and_choose(22)
+            print_and_choose(22)
         case 21:
-            choice = print_and_choose(19)
+            print_and_choose(19)
         case 22:
             print('VÉGE')
             exit_game = True
