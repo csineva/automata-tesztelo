@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-s = Service(executable_path='e:\selenium\chromedriver.exe')
+s = Service(executable_path='c:\selenium\chromedriver.exe')
 o = Options()
 o.add_experimental_option('detach', True)
 browser = webdriver.Chrome(service=s, options=o)
@@ -24,18 +24,10 @@ title = browser.current_url
 firstname = browser.find_element(By.ID, 'firstname')
 surname = browser.find_element(By.ID, 'surname')
 age = browser.find_element(By.ID, 'age')
-# country = browser.find_element(By.ID, 'country')                                         #  useless here
-# country = browser.find_element(By.CSS_SELECTOR, '#country > option:nth-child(38)')       #  css 1. FAIL
-# country = browser.find_element(By.CSS_SELECTOR, 'css=input:nth-child(31)')               #  css 2. FAIL
-# country = browser.find_element(By.XPATH, '//*[@id="country"]/option[76]')                #  xpath 1. OK
-# country = browser.find_element(By.XPATH, '//*[@id="country"]/option[text()="Honduras"]') #  xpath 2. OK
 notes = browser.find_element(By.ID, 'notes')
 submit_button = browser.find_element(By.CSS_SELECTOR, 'body > div > div:nth-child(7) > '
                                                       'form > input[type=submit]:nth-child(31)')  # css 2. OK
-# submit_button = browser.find_element(By.XPATH, '/html/body/div/div[3]/form/input[4]') #  xpath 1. OK
-# submit_button = browser.find_element(By.XPATH, '//input[@type="submit"]')             #  xpath 2. OK
-# submit_button = browser.find_element(By.XPATH, '//input[4]')                          #  xpath 3. OK
-# submit_button = browser.find_element(By.CSS_SELECTOR, 'input:nth-child(31)')          #  css 1. OK
+
 
 
 # randomly selected country fun--------------------------------------------------
@@ -69,3 +61,15 @@ if title_sent == title:
     print('Űrlap elküldése sikertelen')
 else:
     print('Az űrlap elküldve!')
+
+
+# country = browser.find_element(By.ID, 'country')                                         #  useless here
+# country = browser.find_element(By.CSS_SELECTOR, '#country > option:nth-child(38)')       #  css 1. FAIL
+# country = browser.find_element(By.CSS_SELECTOR, 'css=input:nth-child(31)')               #  css 2. FAIL
+# country = browser.find_element(By.XPATH, '//*[@id="country"]/option[76]')                #  xpath 1. OK
+# country = browser.find_element(By.XPATH, '//*[@id="country"]/option[text()="Honduras"]') #  xpath 2. OK
+
+# submit_button = browser.find_element(By.XPATH, '/html/body/div/div[3]/form/input[4]') #  xpath 1. OK
+# submit_button = browser.find_element(By.XPATH, '//input[@type="submit"]')             #  xpath 2. OK
+# submit_button = browser.find_element(By.XPATH, '//input[4]')                          #  xpath 3. OK
+# submit_button = browser.find_element(By.CSS_SELECTOR, 'input:nth-child(31)')          #  css 1. OK

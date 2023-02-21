@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-s = Service(executable_path='e:\selenium\chromedriver.exe')
+s = Service(executable_path='c:\selenium\chromedriver.exe')
 o = Options()
 o.add_experimental_option('detach', True)
 browser = webdriver.Chrome(service=s, options=o)

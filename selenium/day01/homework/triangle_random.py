@@ -4,13 +4,13 @@ Használjunk elágazást és írjunk ki a képernyőre egy az eredménynek megfe
 
 https://testpages.herokuapp.com/styled/apps/triangle/triangle001.html
 '''
-import time
+import random
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-
 from selenium.webdriver.common.by import By
+
 s = Service(executable_path='c:\selenium\chromedriver.exe')
 o = Options()
 o.add_experimental_option('detach', True)
@@ -37,34 +37,42 @@ def fill_form(a, b, c):
     return browser.find_element(By.ID, 'triangle-type').text
 
 
-triangles = [
-    [10, 10, 10, 'Egyenlő szárú háromszög (Equilateral)'],
-    [10, 10, 5, 'Egyenlő oldalú háromszög (Isosceles)'],
-    [10, 11, 12, 'Nem egyenlő oldalú háromszög (Scalene)'],
-    [10, 10, 20, 'Nem háromszög (Not a Triangle)'],
-    ]
-
-
-for i in range(len(triangles)):
-    x, y, z, typ = triangles[i]
-
-    filled = fill_form(x, y, z)
-    checked = check_triangle(x, y, z)
-    print(f'Tesztelt háromszög oldalainak hossza: {x}, {y}, {z}\n'
-          f'Elvárt eredmény: {typ}\n'
-          f'Kliens oldalon számított eredmény: {checked}\n'
-          f'Böngészőben visszakapott érték: {filled}'
-          )
-    print('_' * 12)
-    time.sleep(3)
+def check_result(a, b, c):
+    filled = fill_form(a, b, c)
+    checked = check_triangle(a, b, c)
+    print(f'Oldalak: {a: >3}, {b: >3}, {c: >3} '
+          f'Elvárt: {checked: <24} '
+          f'Kapott: {filled: <24} ',
+          end='')
     if checked == filled:
-        print('test PASSED')
-        print()
+        print(f'{"PASS": <5}')
     else:
-        print('test FAILED')
-        print()
+        print(f'{"FAIL": >10}')
 
+
+triangles = [
+    [10, 10, 10],  # Egyenlő szárú háromszög (Equilateral)
+    [10, 10, 5],  # Egyenlő oldalú háromszög (Isosceles)
+    [10, 11, 12],  # Nem egyenlő oldalú háromszög (Scalene)
+    [10, 10, 20],  # Nem háromszög (Not a Triangle)
+]
+
+# static data from triangles list
+for i in range(len(triangles)):  # for i in triangles nem működik valamiért
+    x, y, z = triangles[i]
+
+    check_result(x, y, z)
+    browser.refresh()
+
+# random data between 1:100
+print()
+print('_' * 10, 'Random data: ', '_' * 10)
+for i in range(10):
+    x = random.randint(1, 100)
+    y = random.randint(1, 100)
+    z = random.randint(1, 100)
+
+    check_result(x, y, z)
     browser.refresh()
 
 browser.close()
-
